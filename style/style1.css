@@ -84,3 +84,12 @@ h1{
     opacity: 0.5;
 
 }
+h3{
+    color: red;
+}
+
+button{
+    background-color: black;
+    border: none;
+    color: red;
+}

@@ -21,11 +21,6 @@ h1{
     position: relative;
 }
 
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
 .card::after, .card::before{
     content: '';
     position: absolute;
@@ -45,21 +40,12 @@ h1{
     opacity: 0.5;
 
 }
-@keyframes spin{
-    from{
-        --angle: 0deg;
-    }
-    to{
-        --angle: 360deg;
-    }
-}
 
-.card{
+.card1{
     background: linear-gradient(to right, white, yellow);
     background-clip: text;
     color: transparent;
     text-align: center;
-    margin: 0 auto;
     padding: 1em;
     width: 300px;
     background: #1c1f2b;
@@ -72,44 +58,6 @@ h1{
     initial-value: 0deg;
     inherits: false;
 }
-.card::after, .card::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), transparent 60%, red);
-    top: 100%;
-    width: 100%;
-    translate: -50% -95%;
-    z-index: -1;
-    padding: 10px;
-    border-radius: 10px;
-    animation: 2s spin linear infinite;
-}
-.card::before{
-    filter: blur(1.5rem);
-    opacity: 0.5;
-
-}
-@keyframes spin{
-    from{
-        --angle: 0deg;
-    }
-    to{
-        --angle: 360deg;
-    }
-}.card1{
-    background: linear-gradient(to right, white, yellow);
-    background-clip: text;
-    color: transparent;
-    text-align: center;
-    padding: 1em;
-    width: 300px;
-    background: #1c1f2b;
-    border-radius: 10px;
-    position: relative;
-}
-
 .card1::after, .card::before{
     content: '';
     position: absolute;
@@ -128,4 +76,12 @@ h1{
     filter: blur(1.5rem);
     opacity: 0.5;
 
+}
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
 }
