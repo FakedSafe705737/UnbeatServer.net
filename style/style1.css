@@ -1,89 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body {
     background-color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
 h1{
-   background: linear-gradient(white, blue); 
-   background-clip: text;
-   color: transparent;
-}
-.card{
-    background: linear-gradient(to right, white, red);
+    background: linear-gradient(white, blue); 
     background-clip: text;
     color: transparent;
-    text-align: center;
-    margin: 0 auto;
-    padding: 1em;
-    width: 300px;
-    background: #1c1f2b;
-    border-radius: 10px;
-    position: relative;
-}
-
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-.card::after, .card::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), transparent 60%, blue);
-    top: 100%;
-    width: 100%;
-    translate: -50% -95%;
-    z-index: -1;
-    padding: 10px;
-    border-radius: 10px;
-    animation: 2s spin linear infinite;
-}
-.card::before{
-    filter: blur(1.5rem);
-    opacity: 0.5;
-
-}
-@keyframes spin{
-    from{
-        --angle: 0deg;
-    }
-    to{
-        --angle: 360deg;
-    }
-}
-
-.card1{
-    background: linear-gradient(to right, white, red);
-    background-clip: text;
-    color: transparent;
-    text-align: center;
-    padding: 1em;
-    width: 300px;
-    background: #1c1f2b;
-    border-radius: 10px;
-    position: relative;
-}
-
-.card1::after, .card::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), transparent 60%, blue);
-    top: 100%;
-    width: 100%;
-    translate: -50% -95%;
-    z-index: -1;
-    padding: 10px;
-    border-radius: 10px;
-    animation: 2s spin linear infinite;
-}
-.card1::before{
-    filter: blur(1.5rem);
-    opacity: 0.5;
-
-}
+ }
 h3{
     color: red;
 }
@@ -92,4 +19,70 @@ button{
     background-color: black;
     border: none;
     color: red;
+}
+nav{
+    background: linear-gradient(Red, blue);
+    color: transparent;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li{
+    height: 50px;
+}
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+nav a:hover{
+    background: linear-gradient(Red, blue);
+}
+nav li:first-child{
+    margin-right: auto;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    color: white;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 -10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+}
+.menu-button{
+    display: none;
+}
+@media(max-width: 800px){
+.hideOnMobile{
+    display: none;
+}
+.menu-button{
+    display: flex;
+}
+}
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
 }
