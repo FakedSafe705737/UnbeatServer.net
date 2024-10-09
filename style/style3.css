@@ -13,68 +13,82 @@ h1{
    color: transparent;
 }
 nav{
+    height: 60px;
     background: linear-gradient(Red, yellow);
-    color: transparent;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
-}
-nav ul{
-    width: 100%;
-    list-style: none;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-}
-nav li{
-    height: 50px;
-}
-nav a{
+  }
+  .links-container{
     height: 100%;
-    padding: 0 30px;
-    text-decoration: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  nav a{
+    height: 100%;
+    padding: 0 20px;
     display: flex;
     align-items: center;
+    text-decoration: none;
     color: white;
-}
-nav a:hover{
+  }
+  nav a:hover{
     background: linear-gradient(Red, yellow);
-}
-nav li:first-child{
+  }
+  nav .home-link{
     margin-right: auto;
-}
-.sidebar{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 250px;
-    z-index: 999;
-    color: white;
-    backdrop-filter: blur(10px);
-    box-shadow: -10px 0 -10px rgba(0, 0, 0, 0.1);
+  }
+  nav svg{
+    fill: var(--text-color);
+  }
+  #sidebar-active{
     display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.sidebar li{
-    width: 100%;
-}
-.sidebar a{
-    width: 100%;
-}
-.menu-button{
+  }
+  .open-sidebar-button, .close-sidebar-button{
     display: none;
-}
-@media(max-width: 800px){
-.hideOnMobile{
-    display: none;
-}
-.menu-button{
-    display: flex;
-}
-}
-@media(max-width: 400px){
-    .sidebar{
-        width: 100%;
+  }
+  @media(max-width: 450px){
+    .links-container{
+      flex-direction: column;
+      align-items: flex-start;
+  
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 10;
+      width: 300px;
+  
+
+      box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+      transition: 0.75s ease-out;
+      backdrop-filter: blur(10px);
     }
-}
+    nav a{
+      box-sizing: border-box;
+      height: auto;
+      width: 100%;
+      padding: 20px 30px;
+      justify-content: flex-start;
+    }
+    .open-sidebar-button{
+      padding: 20px;
+      display: block;
+    }
+    .close-sidebar-button{
+        padding: 20px;
+        display: block;
+    }
+    #sidebar-active:checked ~ .links-container{
+      right: 0;
+    }
+    #sidebar-active:checked ~ #overlay{
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9;
+    }
+  }
