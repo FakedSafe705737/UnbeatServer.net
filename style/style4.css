@@ -44,7 +44,7 @@ h1{
     margin-left: auto;
   }
   nav svg{
-    fill: var(--text-color);
+color: white;
   }
   #sidebar-active{
     display: none;
