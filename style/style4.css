@@ -40,6 +40,9 @@ h1{
   nav .home-link{
     margin-right: auto;
   }
+  nav .home-link2{
+    margin-left: auto;
+  }
   nav svg{
     fill: var(--text-color);
   }
